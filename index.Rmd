@@ -1,6 +1,6 @@
 ---
-title: "Risen erityisasiantuntija: ennakkoteht‰v‰"
-author: "Antti K‰‰ri‰l‰"
+title: "Risen erityisasiantuntija: ennakkoteht√§v√§"
+author: "Antti K√§√§ri√§l√§"
 output:
   html_document:
     theme: cosmo
