@@ -1,4 +1,4 @@
 
-# Aineston käsittely
+# Datan valmistelu
 
 Tässä dokumentissa kuvataan aineiston käsittelyn vaiheet.
