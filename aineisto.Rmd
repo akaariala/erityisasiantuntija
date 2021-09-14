@@ -1,0 +1,4 @@
+
+# Aineston käsittely
+
+Tässä dokumentissa kuvataan aineiston käsittelyn vaiheet.

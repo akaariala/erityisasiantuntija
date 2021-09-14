@@ -1,0 +1,10 @@
+---
+title: "Erityisasiantuntija"
+author: "Antti K‰‰ri‰l‰"
+date: 19.9.2021
+output: github_document
+---
+
+T‰ss‰ linkki erityisasiantuntijan haastattelun ennakkoteht‰v‰‰n: https://akaariala.github.io/erityisasiantuntija/
+
+ 
