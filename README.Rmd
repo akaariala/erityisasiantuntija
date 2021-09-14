@@ -6,5 +6,3 @@ output: github_document
 ---
 
 T‰ss‰ linkki erityisasiantuntijan haastattelun ennakkoteht‰v‰‰n: https://akaariala.github.io/erityisasiantuntija/
-
- 
