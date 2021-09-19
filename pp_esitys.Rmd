@@ -81,7 +81,7 @@ knitr::include_graphics("ennuste.png")
 ## Johtopäätökset
 
 - Rikosoikeudellisessa vastuussa oleva väestö on kasvanut Suomessa 2000-luvun aikana lähinnä aikuisväestön osalta.
-- Maakunnista kasvu on tapahtunut lähinnä Uudellamaalla sekä joissain määrin myös Pirkanmaalla, Varsinais-Suomessa ja Pohjois-Pohjanmaalla.
+- Maakunnista kasvu on tapahtunut lähinnä Uudellamaalla sekä jossain määrin myös Pirkanmaalla, Varsinais-Suomessa ja Pohjois-Pohjanmaalla.
 - Aikuisväestön määrä on kasvanut kolmen em. maakunnan alueella.
 - Nuorisokäinen väestö (15--20-v.) on lisääntynyt vuodesta 2000 vain Uudellamalla, jossa määrä on taittunut laskuun 2010-luvun aikana. Muiden maakuntien alueella nuorison määrä on pysynyt ennallaan tai pienentynyt.
 - Tulevina vuosina 15--18-vuotiaiden määrä tulee kasvamaan Uudellamaalla, muissa maakunnissa nuorten määrä kasvaa enintään hieman tai pysyy ennallaan.
