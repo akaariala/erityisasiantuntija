@@ -8,9 +8,9 @@ output: powerpoint_presentation
 
 
 
-```{r setup, include = T, eval = F}
+```{r setup, include = F, eval = T}
 
-setwd("~/polku_työkansioon")
+setwd("~/GitHub/erityisasiantuntija/erityisasiantuntija")
 
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE,
   dev = "png", fig.width = 8, fig.height = 5)
@@ -105,7 +105,7 @@ knitr::include_graphics("ennuste.png")
 - Rikosoikeudellisessa vastuussa oleva väestö on kasvanut Suomessa 2000-luvun aikana lähinnä aikuisväestön osalta.
 - Noin puolet rikosoikeudellisessa vastuussa olevasta väestöstä asuu Uudellamaalla, Pirkanmaalla, Varsinais-Suomessa ja Pohjois-Pohjanmaalla. Väestö kasvanut vain näissä maakunnissa 2000-luvulla.
 - Myös aikuisväestön määrä on kasvanut näiden neljän em. maakunnan alueella.
-- Nuorisokäinen väestö (15--20-v.) on lisääntynyt vuodesta 2000 Uudellamaalla, jossa määrä on kuitenkin taittunut laskuun 2010-luvun aikana. Muiden maakuntien alueella nuorison määrä on pysynyt ennallaan tai vähentynyt.
+- Nuorisokäinen väestö (15--20-v.) on lisääntynyt vuodesta 2000 Uudellamaalla. Muiden maakuntien alueella nuorison määrä on pysynyt ennallaan tai vähentynyt.
 - Tulevina vuosina 15--18-vuotiaiden määrä tulee kasvamaan Uudellamaalla, muissa maakunnissa nuorten määrä kasvaa enintään hieman tai pysyy ennallaan.
 - Tarkastelua mahdollista hienojakoistaa esim. ikäryhmiä tarkentamalla tai sukupuolittaisilla tarkasteluilla.
 
