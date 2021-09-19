@@ -16,7 +16,7 @@ output:
 
 Tässä dokumentissa kuvataan, miten olen tehnyt Risen erikoisasiantuntijan työhaastattelun ennakkotehtävän. Ennakkotahtävässä tulee esitellä graafisesti rikosoikeudellisessa vastuussa olevien ikäryhmien jakautumista Suomessa maakunnittain 2000-luvulla.
 
-Tein ennakkotehtävän kokonaan R-ohjelmistolla. Ensin tein omat R-scriptit aineiston valmistelua ja kuvioiden tuottamista varten. Lopuksi valmistelin Power point -esityksen R Markdown'lla. Tämä dokumentti on jaettu näiden kolmen tehtäväkokonaisuuden mukaisesti kolmeen osaan: aineiston valmisteluun, kuvioiden tuottamiseen ja Power Point -esityksen kokoamiseen.
+Tein ennakkotehtävän kokonaan R-ohjelmistolla. Ensin tein omat R-scriptit aineiston valmistelua ja kuvioiden tuottamista varten. Lopuksi valmistelin Power point -esityksen R Markdown'lla. Tämä dokumentti on jaettu näiden kolmen tehtäväkokonaisuuden mukaisesti kolmeen osaan: aineiston valmisteluun, kuvioiden tuottamiseen ja Power Point -esityksen kokoamiseen. 
 
 Power point -esityksen voi helposti päivittää suorittamalla tiedostot R:llä uudelleen, kun Tilastokeskuksen data päivittyy.
 
