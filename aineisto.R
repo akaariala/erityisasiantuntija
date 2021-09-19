@@ -1,20 +1,15 @@
+# Aineiston lataaminen ja muokkaus ----------------------------------------
+# 19.9.2021
 
-# 1. Aineiston tuottaminen
-
-Tässä luvussa kuvataan aineiston valmistelu eli se, miten latasin aineiston Tilastokeskuksen tietokannasta ja muokkasin sen kuvioiden tuottamista varten.
-
-Tiedot Suomen väestöstä vuosilta 2000--2020 saadaan Tilastokeskuksen PxWeb API-rajapinnan kautta. Tietoja ei näytä olevan saatavilla maakunnittain, joten ladataan tiedot kunnittain ja yhdistetään maakuntatieto myöhemmin aineistoon. 
-
-Tässä on aineiston lataamiseen käyttämäni koodi:
-```{r eval = FALSE}
-
-setwd("~/polku_työkansioon")
-
-# tarvittavat paketit
+setwd("~/GitHub/erityisasiantuntija/erityisasiantuntija")
 
 library(tidyverse)
 library(lubridate)
 library(pxweb)
+
+
+
+# Ladataan aineisto TK:n rajapinnasta -------------------------------------
 
 # pxweb_get komennolle annettava kysely
 
@@ -37,22 +32,17 @@ px_tibble <- as.data.frame(px_data,
                            column.name.type = "text", 
                            variable.value.type = "text") %>% as_tibble()
 
-```
 
-Maakuntatiedon liittämiseen tarvittava kunta-maakunta-avain vuodelta 2021 löytyy Tilastokeskuksen sivustolta:
 
-https://www2.stat.fi/fi/luokitukset/corrmaps/kunta_1_20210101%23maakunta_1_20210101/
-```{r eval = FALSE}
+# Aineiston muokkaus ------------------------------------------------------
 
+# Maakuntatiedon liittämiseen tarvittava kunta-maakunta-avain vuodelta 2021
+# löytyy Tilastokeskuksen sivustolta:
+# https://www2.stat.fi/fi/luokitukset/corrmaps/kunta_1_20210101%23maakunta_1_20210101/
 # Kunta-maakunta-datasta tarvitaan kahta muuttujaa:
 # kuntaa(alue_kunta) ja maakuntaa (alue_mk)
 
 kunta_maakunta <- read.csv("kunta_maakunta_2021.csv", sep = ";") %>% as_tibble()
-
-```
-
-Lopuksi liitetään kunta-maakunta avain PxWebistä ladattuun aineistoon ja muokataan data valmiiksi kuvien tuottamista varten.
-```{r, warning = FALSE, eval = FALSE}
 
 # tarkastelun ikäryhmät 
 
@@ -67,7 +57,7 @@ ika_labs2 <- c(paste0("0\u2013", "11 v."),
               paste0("18\u2013", "20 v."), 
               "Yli 20 v.")
 
-# aineiston kasaaminen, muokkaus ja tallennus
+# aineiston kasaaminen ja muokkaus
 
 vaesto_data <- px_tibble %>%
   filter(Ikä != "Yhteensä") %>% 
@@ -93,8 +83,6 @@ vaesto_data <- px_tibble %>%
   arrange(maakunta, vuosi, ika) 
 
 saveRDS(vaesto_data, file = "vaesto_data.rds")
-
-```
 
 
 

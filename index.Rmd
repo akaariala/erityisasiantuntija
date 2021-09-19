@@ -1,16 +1,23 @@
 ---
-title: "Risen erityisasiantuntija: ennakkotehtävä"
+title: "Ennakkotehtävä Risen erityisasiantuntijan haastatteluun"
 author: "Antti Kääriälä"
+date: "21.9.2021"
 output:
   html_document:
     theme: cosmo
     toc: true
-    toc_depth: 2
+    toc_depth: 1
     fig_caption: true
     fig_width: 6
     fig_height: 4
-    code_folding: hide
+    code_folding: show
 ---
+
+Tässä dokumentissa kuvataan, miten olen tehnyt Risen erikoisasiantuntijan työhaastattelun ennakkotehtävän. Ennakkotahtävässä tulee esitellä graafisesti rikosoikeudellisessa vastuussa olevien ikäryhmien jakautumista Suomessa maakunnittain 2000-luvulla.
+
+Tein ennakkotehtävän kokonaan R-ohjelmistolla. Ensin tein omat R-scriptit aineiston valmistelua ja kuvioiden tuottamista varten. Lopuksi valmistelin Power point -esityksen käyttämällä R Markdownia. Tämä dokumentti on jaettu näiden kolmen tehtäväkokonaisuuden mukaisesti kolmeen osaan: aineiston valmisteluun, kuvioiden tuottamiseen ja Power Point -esityksen kokoamiseen.
+
+Power point -esityksen voi helposti päivittää suorittamalla tiedostot R:llä uudelleen, kun Tilastokeskuksen data päivittyy.
 
 ***
   
@@ -23,4 +30,12 @@ output:
 ```
 
 ***
-  
+
+# 3. Esityksen kokoaminen
+
+Kokosin esityksen alla olevalla R Markdownin koodilla kirjoittamalla kalvojen tekstit markdown-pohjaan ja poimimalla edellä tallennetut kuviot esitykseen.
+
+```{r child = "pp_esitys.Rmd"}
+```
+
+***  

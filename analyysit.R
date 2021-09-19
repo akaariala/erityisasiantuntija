@@ -1,12 +1,7 @@
+# Valmistellaan esityksen kuviot ------------------------------------------
+# 19.9.2021
 
-# 2. Kuvioiden tuottaminen
-
-Seuraavassa scriptissä on kaikki Power point -esityksen kuvioiden tuottamiseen tarvittava koodi.
-```{r eval = FALSE}
-
-setwd("~/polku_työkansioon")
-
-# tarvittavat paketit
+setwd("~/GitHub/erityisasiantuntija/erityisasiantuntija")
 
 library(tidyverse)
 library(lubridate)
@@ -14,6 +9,7 @@ library(lubridate)
 # aineiston lataaminen
 
 vaesto_data <- read_rds("vaesto_data.rds")
+
 
 
 
@@ -197,5 +193,3 @@ ennuste <- ennuste_data %>%
                      palette = "Set1") 
 
 ggsave("ennuste.png", width = p_width, height = p_height)
-
-```

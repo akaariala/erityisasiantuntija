@@ -1,0 +1,94 @@
+---
+title: "Rikosoikeudellisessa vastuussa oleva väestö Suomessa 2000-luvulla"
+author: "Antti Kääriälä"
+date: "27.9.2021"
+output: powerpoint_presentation
+subtitle: Ennakkotehtävä Risen erityisasiantuntijan haastatteluun
+---
+
+
+
+```{r setup, include = TRUE, eval = FALSE}
+
+setwd("~/polku_työkansioon")
+
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE,
+  dev = "png", fig.width = 8, fig.height = 5)
+
+```
+
+
+
+## Esityksen tarkoitus
+
+- Antaa käsitys rikosoikeudellisessa vastuussa olevien ikäryhmien jakautumisesta Suomessa maakunnittain 2000-luvulla.
+- Rikosoikeudellinen vastuu alkaa 15-vuotiaana. 
+- Tarkasteltavat ikäryhmät: 15--17-vuotiaat, 18--20-vuotiaat ja yli 20-vuotiaat.
+
+
+
+## Suomen väestö kasvanut hieman 2000-luvun aikana
+
+```{r}
+
+knitr::include_graphics("kokovaesto.png")
+
+```
+
+
+
+## Rikosoikeudellisessa vastuussa oleva väestö eli 15 vuotta täyttäneet maakunnittain
+
+```{r}
+
+knitr::include_graphics("mk_rvpop.png")
+
+
+```
+
+
+
+## Aikuisväestö eli yli 20-vuotiaat lisääntynyt eniten Uudellamaalla
+
+```{r}
+
+knitr::include_graphics("mk_aik.png")
+
+```
+
+
+
+## Nuorisoikäinen väestö eli 15--20-vuotiaat vähentynyt useimmissa maakunnissa
+
+```{r}
+
+knitr::include_graphics("mk_nuoret.png")
+
+```
+
+
+
+## Ennuste: 15--18-vuotiaiden määrä kasvaa lähinnä Uudellamaalla
+
+```{r}
+
+knitr::include_graphics("ennuste.png")
+
+```
+
+
+
+## Johtopäätökset
+
+- Rikosoikeudellisessa vastuussa oleva väestö on kasvanut Suomessa 2000-luvun aikana lähinnä aikuisväestön osalta.
+- Maakunnista kasvu on tapahtunut lähinnä Uudellamaalla sekä joissain määrin myös Pirkanmaalla, Varsinais-Suomessa ja Pohjois-Pohjanmaalla.
+- Aikuisväestön määrä on kasvanut kolmen em. maakunnan alueella.
+- Nuorisokäinen väestö (15--20-v.) on lisääntynyt vuodesta 2000 vain Uudellamalla, jossa määrä on taittunut laskuun 2010-luvun aikana. Muiden maakuntien alueella nuorison määrä on pysynyt ennallaan tai pienentynyt.
+- Tulevina vuosina 15--18-vuotiaiden määrä tulee kasvamaan Uudellamaalla, muissa maakunnissa nuorten määrä kasvaa enintään hieman tai pysyy ennallaan.
+- Tarkastelua mahdollista hienojakoistaa esim. ikäryhmiä tarkentamalla tai sukupuolittaisilla tarkasteluilla.
+
+
+
+## Kiitos!
+
+
