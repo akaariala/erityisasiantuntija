@@ -4,6 +4,7 @@
 setwd("~/GitHub/erityisasiantuntija/erityisasiantuntija")
 
 library(tidyverse)
+library(viridis)
 library(lubridate)
 
 # aineiston lataaminen
