@@ -43,7 +43,7 @@ p_kokovaesto <- vaesto_data %>%
                      labels = scales::number_format(scale = 1 / 1000000, 
                                                     accuracy = 1, 
                                                     big.mark = " ")) +
-  scale_fill_brewer(direction = -1, name = "Ikäryhmä") 
+  scale_fill_brewer(direction = -1, name = "Ikä:") 
 
 ggsave("kokovaesto.png", width = p_width, height = p_height)
 

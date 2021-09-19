@@ -8,7 +8,7 @@ subtitle: Ennakkotehtävä Risen erityisasiantuntijan haastatteluun
 
 
 
-```{r setup, include = TRUE, eval = FALSE}
+```{r setup, include = T, eval=F}
 
 setwd("~/polku_työkansioon")
 
