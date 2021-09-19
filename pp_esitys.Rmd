@@ -79,6 +79,17 @@ knitr::include_graphics("mk_nuoret.png")
 
 
 
+
+## Rikosoikeudellisessa vastuussa olevasta väestöstä eli 15 vuotta täyttäneistä alle 10 % nuorisoikäisiä
+
+```{r}
+
+knitr::include_graphics("ika_rvpopdist.png")
+
+```
+
+
+
 ## Ennuste: 15--18-vuotiaiden määrä kasvaa lähinnä Uudellamaalla
 
 ```{r}

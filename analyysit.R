@@ -53,16 +53,16 @@ ggsave("kokovaesto.png", width = p_width, height = p_height)
 
 n_pop <- vaesto_data %>% 
   filter(maakunta == "Koko Suomi" & ika_lk1 != "0–14 v.") %>% 
-  count(vuosi, vuosi, wt = vaesto, name = "n_pop")
+  count(vuosi, wt = vaesto, name = "n_pop")
 
-vaesto_data %>% 
+mk_rvpopdist <- vaesto_data %>% 
   filter(maakunta != "Koko Suomi" & ika_lk1 != "0–14 v.") %>% 
   count(maakunta, vuosi, wt = vaesto, name = "vaesto") %>% 
   left_join(n_pop, by = "vuosi") %>% 
   mutate(pop_osuus = vaesto / n_pop) %>%
   ggplot(aes(x = vuosi, y = pop_osuus)) +
   geom_area(aes(fill = fct_reorder(maakunta, vaesto)), 
-            alpha = 0.7, color = "white")+
+            alpha = 0.7, color = "white") +
   theme_minimal() +
   theme(plot.margin = margin(1, 1, 1, 1, unit = 'pt'), 
         text = element_text(size = font_size),
@@ -75,9 +75,36 @@ vaesto_data %>%
                      breaks = seq(0, 1, 0.2),
                      minor_breaks = seq(0, 1, 0.1),
                      labels = scales::percent_format(suffix = "")) +
-  scale_fill_viridis(option="cividis", discrete = TRUE, direction = -1)
+  scale_fill_viridis(option = "cividis", discrete = TRUE, direction = -1)
 
 ggsave("mk_rvpopdist.png", width = p_width, height = p_height)
+
+
+
+# Aluekuvio rv-ikäisten jakaumasta ikäluokittain --------------------------
+
+ika_rvpopdist <- vaesto_data %>% 
+  filter(maakunta != "Koko Suomi" & ika_lk1 != "0–14 v.") %>% 
+  count(ika_lk1, vuosi, wt = vaesto, name = "vaesto") %>% 
+  left_join(n_pop, by = "vuosi") %>% 
+  mutate(pop_osuus = vaesto / n_pop) %>% 
+  ggplot(aes(x = vuosi, y = pop_osuus)) +
+  geom_area(aes(fill = fct_reorder(ika_lk1, vaesto) %>% fct_rev()), 
+            alpha = 0.7, color = "white") +
+  theme_minimal() +
+  theme(plot.margin = margin(1, 1, 1, 1, unit = 'pt'), 
+        text = element_text(size = font_size),
+        panel.grid.major = element_line(size = 1)) +
+  labs(x = NULL, 
+       y = "Osuus väestöstä, %",
+       caption = lahde) +
+  scale_y_continuous(expand = c(0, 0.01),
+                     breaks = seq(0, 1, 0.2),
+                     minor_breaks = seq(0, 1, 0.1),
+                     labels = scales::percent_format(suffix = "")) +
+  scale_fill_brewer(name = "Ikä:") 
+
+ggsave("ika_rvpopdist.png", width = p_width, height = p_height)
 
 
 
@@ -105,7 +132,7 @@ rvpop_data <- p_data %>%
   
 mk_rvpop <- rvpop_data %>% 
   ggplot(aes(fct_reorder(maakunta, n), n)) +
-  geom_point(aes(color = as_factor(vuosi)), size = 4) +
+  geom_point(aes(color = as_factor(vuosi)), alpha = 0.9, size = 4) +
   coord_flip() +
   theme_minimal() +
   theme(panel.grid.major.y = element_blank(),
@@ -136,7 +163,7 @@ aikuisten_data <- p_data %>%
 
 mk_aik <- aikuisten_data %>% 
   ggplot(aes(fct_reorder(maakunta, n), n)) +
-  geom_point(aes(color = as_factor(vuosi)), size = 4) +
+  geom_point(aes(color = as_factor(vuosi)), alpha = 0.9, size = 4) +
   coord_flip() +
   theme_minimal() +
   theme(panel.grid.major.y = element_blank(),
@@ -167,7 +194,7 @@ nuorten_data <- p_data %>%
 
 mk_nuoret <- nuorten_data %>% 
   ggplot(aes(fct_reorder(maakunta, n), n)) +
-  geom_point(aes(color = as_factor(vuosi)), size = 4) +
+  geom_point(aes(color = as_factor(vuosi)), alpha = 0.9, size = 4) +
   coord_flip() +
   theme_minimal() +
   theme(panel.grid.major.y = element_blank(),
