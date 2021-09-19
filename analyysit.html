@@ -219,6 +219,38 @@ ggsave(&quot;kokovaesto.png&quot;, width = p_width, height = p_height)
 
 
 
+# Aluekuvio rikosvastuuikäisen väestön jakautumisesta maakunnittain -------
+
+n_pop &lt;- vaesto_data %&gt;% 
+  filter(maakunta == &quot;Koko Suomi&quot; &amp; ika_lk1 != &quot;0–14 v.&quot;) %&gt;% 
+  count(vuosi, vuosi, wt = vaesto, name = &quot;n_pop&quot;)
+
+vaesto_data %&gt;% 
+  filter(maakunta != &quot;Koko Suomi&quot; &amp; ika_lk1 != &quot;0–14 v.&quot;) %&gt;% 
+  count(maakunta, vuosi, wt = vaesto, name = &quot;vaesto&quot;) %&gt;% 
+  left_join(n_pop, by = &quot;vuosi&quot;) %&gt;% 
+  mutate(pop_osuus = vaesto / n_pop) %&gt;%
+  ggplot(aes(x = vuosi, y = pop_osuus)) +
+  geom_area(aes(fill = fct_reorder(maakunta, vaesto)), 
+            alpha = 0.7, color = &quot;white&quot;)+
+  theme_minimal() +
+  theme(plot.margin = margin(1, 1, 1, 1, unit = &#39;pt&#39;), 
+        text = element_text(size = font_size),
+        panel.grid.major = element_line(size = 1),
+        legend.title = element_blank()) +
+  labs(x = NULL, 
+       y = &quot;Osuus väestöstä, %&quot;,
+       caption = lahde) +
+  scale_y_continuous(expand = c(0, 0.01),
+                     breaks = seq(0, 1, 0.2),
+                     minor_breaks = seq(0, 1, 0.1),
+                     labels = scales::percent_format(suffix = &quot;&quot;)) +
+  scale_fill_viridis(option=&quot;cividis&quot;, discrete = TRUE, direction = -1)
+
+ggsave(&quot;mk_rvpopdist.png&quot;, width = p_width, height = p_height)
+
+
+
 # Rikosvastuuikäisen väestön määrän muutokset maakunnittain ---------------
 
 # Kuvioissa piirretään havainnot kolmelle vuodelle: 
