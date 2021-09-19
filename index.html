@@ -191,7 +191,7 @@ pre code {
 </div>
 
 <p>Tässä dokumentissa kuvataan, miten olen tehnyt Risen erikoisasiantuntijan työhaastattelun ennakkotehtävän. Ennakkotahtävässä tulee esitellä graafisesti rikosoikeudellisessa vastuussa olevien ikäryhmien jakautumista Suomessa maakunnittain 2000-luvulla.</p>
-<p>Tein ennakkotehtävän kokonaan R-ohjelmistolla. Ensin tein omat R-scriptit aineiston valmistelua ja kuvioiden tuottamista varten. Lopuksi valmistelin Power point -esityksen käyttämällä R Markdownia. Tämä dokumentti on jaettu näiden kolmen tehtäväkokonaisuuden mukaisesti kolmeen osaan: aineiston valmisteluun, kuvioiden tuottamiseen ja Power Point -esityksen kokoamiseen.</p>
+<p>Tein ennakkotehtävän kokonaan R-ohjelmistolla. Ensin tein omat R-scriptit aineiston valmistelua ja kuvioiden tuottamista varten. Lopuksi valmistelin Power point -esityksen R Markdown’lla. Tämä dokumentti on jaettu näiden kolmen tehtäväkokonaisuuden mukaisesti kolmeen osaan: aineiston valmisteluun, kuvioiden tuottamiseen ja Power Point -esityksen kokoamiseen.</p>
 <p>Power point -esityksen voi helposti päivittää suorittamalla tiedostot R:llä uudelleen, kun Tilastokeskuksen data päivittyy.</p>
 <hr />
 <div id="aineiston-tuottaminen" class="section level1">
@@ -475,7 +475,7 @@ ggsave(&quot;ennuste.png&quot;, width = p_width, height = p_height)</code></pre>
 </div>
 <div id="esityksen-kokoaminen" class="section level1">
 <h1>3. Esityksen kokoaminen</h1>
-<p>Kokosin esityksen alla olevalla R Markdownin koodilla kirjoittamalla kalvojen tekstit markdown-pohjaan ja poimimalla edellä tallennetut kuviot esitykseen.</p>
+<p>Kokosin esityksen alla olevalla R Markdown-koodilla kirjoittamalla kalvojen tekstit markdown-pohjaan ja poimimalla edellä tallennetut kuviot esitykseen.</p>
 <pre class="r"><code>setwd(&quot;~/polku_työkansioon&quot;)
 
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE,
