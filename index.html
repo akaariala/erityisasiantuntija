@@ -584,7 +584,9 @@ ggsave(&quot;ennuste.png&quot;, width = p_width, height = p_height)</code></pre>
 </div>
 <div id="johtopäätökset" class="section level2">
 <h2>Johtopäätökset</h2>
-<pre class="r"><code>library(tidyverse)
+<pre class="r"><code># poimitaan johtopäätösdiaan väestön koko viimeisenä seurantavuotena
+
+library(tidyverse)
 
 vaesto_data &lt;- readr::read_rds(&quot;vaesto_data.rds&quot;)
 
