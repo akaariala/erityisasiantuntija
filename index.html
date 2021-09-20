@@ -537,9 +537,7 @@ ggsave(&quot;ennuste.png&quot;, width = p_width, height = p_height)</code></pre>
 <div id="esityksen-kokoaminen" class="section level1">
 <h1>3. Esityksen kokoaminen</h1>
 <p>Kokosin esityksen alla olevalla R Markdown-koodilla kirjoittamalla kalvojen tekstit markdown-pohjaan ja poimimalla edellä tallennetut kuviot esitykseen.</p>
-<pre class="r"><code>setwd(&quot;~/polku_työkansioon&quot;)
-
-knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE,
+<pre class="r"><code>knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE,
   dev = &quot;png&quot;, fig.width = 8, fig.height = 5)</code></pre>
 <div id="esityksen-tarkoitus" class="section level2">
 <h2>Esityksen tarkoitus</h2>
@@ -586,11 +584,18 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE,
 </div>
 <div id="johtopäätökset" class="section level2">
 <h2>Johtopäätökset</h2>
+<pre class="r"><code>library(tidyverse)
+
+vaesto_data &lt;- readr::read_rds(&quot;vaesto_data.rds&quot;)
+
+vika_vuosi &lt;- max(vaesto_data$vuosi) 
+
+rv_pop2020 &lt;- round(vaesto_data %&gt;% filter(maakunta == &quot;Koko Suomi&quot; &amp; vuosi == vika_vuosi &amp; ika_lk1 != &quot;0–14 v.&quot;) %&gt;% count(vuosi, wt = vaesto) %&gt;% pull(n) / 1000000, 1) %&gt;% as.character() %&gt;% str_replace(., &quot;[.]&quot;, &quot;,&quot;)</code></pre>
 <ul>
-<li>Rikosoikeudellisessa vastuussa oleva väestö on kasvanut Suomessa 2000-luvun aikana lähinnä aikuisväestön osalta.</li>
+<li>Rikosoikeudellisessa vastuussa olevaa väestöä oli noin 4,7 miljoonaa henkilöä vuonna 2020, kasvanut Suomessa 2000-luvun aikana.</li>
 <li>Noin puolet rikosoikeudellisessa vastuussa olevasta väestöstä asuu Uudellamaalla, Pirkanmaalla, Varsinais-Suomessa ja Pohjois-Pohjanmaalla. Väestö kasvanut vain näissä maakunnissa 2000-luvulla.</li>
-<li>Myös aikuisväestön määrä on kasvanut näiden neljän em. maakunnan alueella.</li>
-<li>Nuorisoikäinen väestö (15–20-v.) muodostaa alle 10 prosenttia rikosoikeudellisessa vastuussa olevasta väestöstä. Kasvanut vuodesta 2000 Uudellamaalla, muiden maakuntien alueella nuorison määrä on pysynyt ennallaan tai vähentynyt.</li>
+<li>Aikuisväestö muodostaa yli 90 prosenttia rikosvastuussa olevasta väestöstä, määrä kasvanut neljän em. maakunnan alueella.</li>
+<li>Nuorisoikäinen väestö (15–20-v.) muodostaa alle 10 prosenttia rikosoikeudellisessa vastuussa olevasta väestöstä. Vähentynyt 2000-luvulla, kasvua vuodesta 2000 Uudellamaalla, muissa maakunnissa nuorison määrä on pysynyt ennallaan tai vähentynyt.</li>
 <li>Tulevina vuosina 15–17-vuotiaiden määrä tulee kasvamaan Uudellamaalla, muissa maakunnissa nuorten määrä kasvaa enintään hieman tai pysyy ennallaan.</li>
 <li>Tarkastelua mahdollista hienojakoistaa esim. ikäryhmiä tarkentamalla tai sukupuolittaisilla tarkasteluilla.</li>
 </ul>
