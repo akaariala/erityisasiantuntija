@@ -59,7 +59,7 @@ knitr::include_graphics("mk_rvpopdist.png")
 
 
 
-## Aikuisväestö eli yli 20-vuotiaat lisääntynyt eniten Uudellamaalla
+## Aikuisväestö eli yli 20-vuotiaat kasvanut eniten Uudellamaalla
 
 ```{r}
 
