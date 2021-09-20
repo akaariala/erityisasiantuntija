@@ -303,7 +303,7 @@ rvpop_data &lt;- p_data %&gt;%
   
 mk_rvpop &lt;- rvpop_data %&gt;% 
   ggplot(aes(fct_reorder(maakunta, n), n)) +
-  geom_point(aes(color = as_factor(vuosi)), alpha = 0.9, size = 4) +
+  geom_point(aes(color = as_factor(vuosi)), alpha = 0.6, size = 4) +
   coord_flip() +
   theme_minimal() +
   theme(panel.grid.major.y = element_blank(),
@@ -322,7 +322,7 @@ mk_rvpop &lt;- rvpop_data %&gt;%
                      breaks = seq(0, max(rvpop_data$n) + 100000, 250000),
                      minor_breaks = seq(0, max(rvpop_data$n)+ 100000, 125000),
                      labels = scales::number_format(big.mark = &quot; &quot;)) +
-  scale_color_brewer(palette = &quot;BuPu&quot;)
+  scale_color_viridis(discrete = TRUE, direction = -1)
 
 ggsave(&quot;mk_rvpop.png&quot;, width = p_width, height = p_height)
 
@@ -334,7 +334,7 @@ aikuisten_data &lt;- p_data %&gt;%
 
 mk_aik &lt;- aikuisten_data %&gt;% 
   ggplot(aes(fct_reorder(maakunta, n), n)) +
-  geom_point(aes(color = as_factor(vuosi)), alpha = 0.9, size = 4) +
+  geom_point(aes(color = as_factor(vuosi)), alpha = 0.6, size = 4) +
   coord_flip() +
   theme_minimal() +
   theme(panel.grid.major.y = element_blank(),
@@ -353,7 +353,7 @@ mk_aik &lt;- aikuisten_data %&gt;%
                      breaks = seq(0, max(aikuisten_data$n) + 100000, 250000),
                      minor_breaks = seq(0, max(aikuisten_data$n)+ 100000, 125000),
                      labels = scales::number_format(big.mark = &quot; &quot;)) +
-  scale_color_brewer(palette = &quot;BuPu&quot;)
+  scale_color_viridis(discrete = TRUE, direction = -1)
 
 ggsave(&quot;mk_aik.png&quot;, width = p_width, height = p_height)
 
@@ -365,7 +365,7 @@ nuorten_data &lt;- p_data %&gt;%
 
 mk_nuoret &lt;- nuorten_data %&gt;% 
   ggplot(aes(fct_reorder(maakunta, n), n)) +
-  geom_point(aes(color = as_factor(vuosi)), alpha = 0.9, size = 4) +
+  geom_point(aes(color = as_factor(vuosi)), alpha = 0.6, size = 4) +
   coord_flip() +
   theme_minimal() +
   theme(panel.grid.major.y = element_blank(),
@@ -384,7 +384,7 @@ mk_nuoret &lt;- nuorten_data %&gt;%
                      breaks = seq(0, max(nuorten_data$n) + 10000, 20000),
                      minor_breaks = seq(0, max(nuorten_data$n)+ 10000, 10000),
                      labels = scales::number_format(big.mark = &quot; &quot;)) +
-  scale_color_brewer(palette = &quot;BuPu&quot;)
+  scale_color_viridis(discrete = TRUE, direction = -1)
 
 ggsave(&quot;mk_nuoret.png&quot;, width = p_width, height = p_height)
 
@@ -399,7 +399,7 @@ ennuste_data &lt;- vaesto_data %&gt;%
   
 ennuste &lt;- ennuste_data %&gt;% 
   ggplot(aes(fct_reorder(maakunta, n), n)) +
-  geom_point(aes(color = as_factor(ika_lk2)), alpha = 0.7, size = 4) +
+  geom_point(aes(color = as_factor(ika_lk2)), alpha = 0.6, size = 4) +
   coord_flip() +
   theme_minimal() +
   theme(panel.grid.major.y = element_blank(),
