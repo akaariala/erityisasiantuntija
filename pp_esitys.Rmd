@@ -104,7 +104,7 @@ knitr::include_graphics("ennuste.png")
 
 
 ## Johtopäätökset
-```{r, message = F , eval = T}
+```{r, message = F, eval = T}
 
 # poimitaan johtopäätösdiaan väestön koko viimeisenä seurantavuotena
 
@@ -114,10 +114,10 @@ vaesto_data <- readr::read_rds("vaesto_data.rds")
 
 vika_vuosi <- max(vaesto_data$vuosi) 
 
-rv_pop2020 <- round(vaesto_data %>% filter(maakunta == "Koko Suomi" & vuosi == vika_vuosi & ika_lk1 != "0–14 v.") %>% count(vuosi, wt = vaesto) %>% pull(n) / 1000000, 1) %>% as.character() %>% str_replace(., "[.]", ",")
+rv_pop <- round(vaesto_data %>% filter(maakunta == "Koko Suomi" & vuosi == vika_vuosi & ika_lk1 != "0–14 v.") %>% count(vuosi, wt = vaesto) %>% pull(n) / 1000000, 1) %>% as.character() %>% str_replace(., "[.]", ",")
 
 ```
-- Rikosoikeudellisessa vastuussa olevaa väestöä oli noin `r rv_pop2020` miljoonaa henkilöä vuonna `r vika_vuosi`, kasvanut Suomessa 2000-luvun aikana.
+- Rikosoikeudellisessa vastuussa olevaa väestöä oli noin `r rv_pop` miljoonaa henkilöä vuonna `r vika_vuosi`, kasvanut Suomessa 2000-luvun aikana.
 - Noin puolet rikosoikeudellisessa vastuussa olevasta väestöstä asuu Uudellamaalla, Pirkanmaalla, Varsinais-Suomessa ja Pohjois-Pohjanmaalla. Väestö kasvanut vain näissä maakunnissa 2000-luvulla.
 - Aikuisväestö muodostaa yli 90 prosenttia rikosvastuussa olevasta väestöstä, määrä kasvanut neljän em. maakunnan alueella.
 - Nuorisoikäinen väestö (15–20-v.) muodostaa alle 10 prosenttia rikosoikeudellisessa vastuussa olevasta väestöstä. Vähentynyt 2000-luvulla, kasvua vuodesta 2000 Uudellamaalla, muissa maakunnissa nuorison määrä on pysynyt ennallaan tai vähentynyt.

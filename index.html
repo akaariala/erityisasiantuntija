@@ -592,7 +592,7 @@ vaesto_data &lt;- readr::read_rds(&quot;vaesto_data.rds&quot;)
 
 vika_vuosi &lt;- max(vaesto_data$vuosi) 
 
-rv_pop2020 &lt;- round(vaesto_data %&gt;% filter(maakunta == &quot;Koko Suomi&quot; &amp; vuosi == vika_vuosi &amp; ika_lk1 != &quot;0–14 v.&quot;) %&gt;% count(vuosi, wt = vaesto) %&gt;% pull(n) / 1000000, 1) %&gt;% as.character() %&gt;% str_replace(., &quot;[.]&quot;, &quot;,&quot;)</code></pre>
+rv_pop &lt;- round(vaesto_data %&gt;% filter(maakunta == &quot;Koko Suomi&quot; &amp; vuosi == vika_vuosi &amp; ika_lk1 != &quot;0–14 v.&quot;) %&gt;% count(vuosi, wt = vaesto) %&gt;% pull(n) / 1000000, 1) %&gt;% as.character() %&gt;% str_replace(., &quot;[.]&quot;, &quot;,&quot;)</code></pre>
 <ul>
 <li>Rikosoikeudellisessa vastuussa olevaa väestöä oli noin 4,7 miljoonaa henkilöä vuonna 2020, kasvanut Suomessa 2000-luvun aikana.</li>
 <li>Noin puolet rikosoikeudellisessa vastuussa olevasta väestöstä asuu Uudellamaalla, Pirkanmaalla, Varsinais-Suomessa ja Pohjois-Pohjanmaalla. Väestö kasvanut vain näissä maakunnissa 2000-luvulla.</li>
